@@ -4,6 +4,9 @@ on:
     tags:
       - g*
 
+permissions:
+  contents: read
+
 jobs:
   hello-world:
     runs-on: ubuntu-latest
