@@ -4,7 +4,7 @@
         <server>
             <id>github-hypoport</id>
             <username>ignored</username>
-            <password>${env.GITHUB_TOKEN}</password>
+            <password>${env.GITHUB_PAT}</password>
         </server>
     </servers>
 </settings>

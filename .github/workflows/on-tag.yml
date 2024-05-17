@@ -1,0 +1,11 @@
+name: On Tag
+on:
+  push:
+    tags:
+      - g*
+
+jobs:
+  on-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello ${{ github.ref_name }}!"

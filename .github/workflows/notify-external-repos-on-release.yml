@@ -1,8 +1,8 @@
-name: Notify external repositories about a new release
+name: Notify other repos
 on:
   push:
     tags:
-      - genopace-test-artefact-*
+      - g*
 
 jobs:
   hello-world:
