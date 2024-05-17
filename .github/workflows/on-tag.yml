@@ -11,5 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Found good tag ${{ github.event.create.git.ref }}!"
+  on-no-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Found good tag ${{ github.event.create.git.ref }}!"
 
 
