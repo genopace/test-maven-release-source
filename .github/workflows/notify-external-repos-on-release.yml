@@ -2,7 +2,7 @@ name: Notify external repositories about a new release
 on:
   push:
     tags:
-      - genopace-test-artefact-*
+      - genopace-test-artefact-**
 
 jobs:
   notify-dependants:
