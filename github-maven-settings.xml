@@ -3,13 +3,13 @@
     <servers>
         <server>
             <id>github-hypoport</id>
-            <username>github-actions</username>
+            <username>ignored</username>
             <password>${env.GITHUB_TOKEN}</password>
         </server>
         <server>
-            <id>github-hypoport-packages</id>
-            <username>github-actions</username>
-            <password>${env.GITHUB_PACKAGES_TOKEN}</password>
+            <id>github-hypoport-release</id>
+            <username>ignored</username>
+            <password>${env.GITHUB_RELEASE_TOKEN}</password>
         </server>
     </servers>
 </settings>

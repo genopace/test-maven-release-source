@@ -9,6 +9,10 @@
 
     <version>4-SNAPSHOT</version>
 
+    <properties>
+        <project.scm.id>github-hypoport-release</project.scm.id>
+    </properties>
+
     <scm>
         <connection>scm:git:https://github.com/genopace/test-maven-release-source.git</connection>
         <developerConnection>scm:git:https://github.com/genopace/test-maven-release-source.git</developerConnection>
@@ -34,7 +38,7 @@
 
     <repositories>
         <repository>
-            <id>github-hypoport-packages</id>
+            <id>github-hypoport</id>
             <url>https://maven.pkg.github.com/genopace/*</url>
             <releases>
                 <enabled>true</enabled>
