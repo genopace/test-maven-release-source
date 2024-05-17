@@ -7,12 +7,12 @@
     <artifactId>genopace-test-artefact</artifactId>
     <!-- Mergekonflikt Trennzeile -->
 
-    <version>3-SNAPSHOT</version>
+    <version>3</version>
 
     <scm>
         <connection>scm:git:https://github.com/genopace/test-maven-release-source.git</connection>
         <developerConnection>scm:git:https://github.com/genopace/test-maven-release-source.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>genopace-test-artefact-3</tag>
     </scm>
 
     <build>
