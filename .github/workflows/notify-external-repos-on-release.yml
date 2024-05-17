@@ -2,9 +2,13 @@ name: Notify external repositories about a new release
 on:
   push:
     tags:
-      - genopace-test-artefact-**
+      - genopace-test-artefact-*
 
 jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello ${{ github.ref_name }}!"
   notify-dependants:
     runs-on: ubuntu-latest
     strategy:
