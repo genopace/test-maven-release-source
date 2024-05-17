@@ -24,7 +24,7 @@ jobs:
           event-type: api-update
           client-payload: |-
             {
-              "api-version": "${{ env.RELEASE_VERSION }}"
+              "api_version": "${{ env.RELEASE_VERSION }}"
             }
 
 
