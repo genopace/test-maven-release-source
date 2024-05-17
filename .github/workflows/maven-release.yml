@@ -24,3 +24,4 @@ jobs:
           mvn --batch-mode -s github-maven-settings.xml release:prepare release:perform
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_PACKAGES_TOKEN: ${{ github.token }}

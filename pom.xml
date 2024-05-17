@@ -34,7 +34,7 @@
 
     <repositories>
         <repository>
-            <id>github-hypoport</id>
+            <id>github-hypoport-packages</id>
             <url>https://maven.pkg.github.com/genopace/*</url>
             <releases>
                 <enabled>true</enabled>
