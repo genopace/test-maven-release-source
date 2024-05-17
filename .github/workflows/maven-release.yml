@@ -19,6 +19,9 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
       - name: Perform Maven Release
-        run: mvn --batch-mode -s github-maven-settings.xml release:prepare release:perform
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          mvn --batch-mode -s github-maven-settings.xml release:prepare release:perform
         env:
           GITHUB_TOKEN: ${{ github.token }}
