@@ -9,14 +9,6 @@
 
     <version>2-SNAPSHOT</version>
 
-    <properties>
-        <uebersichten.version>1.36</uebersichten.version>
-        <dependency.info.prefix>dependency</dependency.info.prefix>
-        <dependency.info.suffix>list</dependency.info.suffix>
-        <produkt-anbieter-id-api.version>2020-09-24T13-05-57</produkt-anbieter-id-api.version>
-        <produkt-anbieter-id-impl.version>1.897</produkt-anbieter-id-impl.version>
-    </properties>
-
     <scm>
         <connection>scm:git:https://github.com/genopace/test-maven-release-source.git</connection>
         <developerConnection>scm:git:https://github.com/genopace/test-maven-release-source.git</developerConnection>
