@@ -1,0 +1,24 @@
+name: Maven Release
+run-name: Release EFI Bausparservice API
+on:
+  workflow_dispatch:
+
+jobs:
+  maven-release:
+    name: GitHub Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+          cache: 'maven'
+      - name: Perform Maven Release
+        run: mvn --batch-mode -s github-maven-settings.xml release:prepare release:perform
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
