@@ -10,7 +10,7 @@
     <version>5-SNAPSHOT</version>
 
     <properties>
-        <project.scm.id>github-hypoport-release</project.scm.id>
+        <project.scm.id>github-hypoport</project.scm.id>
     </properties>
 
     <scm>
