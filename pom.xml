@@ -7,7 +7,7 @@
     <artifactId>genopace-test-artefact</artifactId>
     <!-- Mergekonflikt Trennzeile -->
 
-    <version>12-SNAPSHOT</version>
+    <version>12</version>
 
     <properties>
         <project.scm.id>github-hypoport</project.scm.id>
@@ -16,7 +16,7 @@
     <scm>
         <connection>scm:git:https://github.com/genopace/test-maven-release-source.git</connection>
         <developerConnection>scm:git:https://github.com/genopace/test-maven-release-source.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>genopace-test-artefact-12</tag>
     </scm>
 
     <build>
