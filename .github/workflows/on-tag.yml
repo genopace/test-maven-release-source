@@ -1,11 +1,15 @@
 name: On Tag
 on:
-  push:
-    tags:
-      - g*
+  create:
+
+permissions:
+  contents: read
 
 jobs:
   on-tag:
+    if: ${{ startsWith(github.ref, 'refs/tags/genopace-test-artefact-') }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello ${{ github.ref_name }}!"
+      - run: echo "Found good tag ${{ github.event.create.git.ref }}!"
+
+
