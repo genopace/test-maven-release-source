@@ -9,6 +9,6 @@ jobs:
     steps:
       - name: Print trigger event data
         run: |
-          echo ${{ toJSON(github.event.registry_package) }}
+          echo "${{ toJSON(github.event.registry_package) }}"
 
 
