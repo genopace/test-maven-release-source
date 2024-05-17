@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!-- dieses Modul wird unabhaengig von EFI released, deshalb fehlt hier der Parent-POM-Eintrag -->
@@ -8,7 +7,7 @@
     <artifactId>genopace-test-artefact</artifactId>
     <!-- Mergekonflikt Trennzeile -->
 
-    <version>1-SNAPSHOT</version>
+    <version>1</version>
 
     <properties>
         <uebersichten.version>1.36</uebersichten.version>
@@ -21,7 +20,7 @@
     <scm>
         <connection>scm:git:https://github.com/genopace/test-maven-release-source.git</connection>
         <developerConnection>scm:git:https://github.com/genopace/test-maven-release-source.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>genopace-test-artefact-1</tag>
     </scm>
 
     <build>
