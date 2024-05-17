@@ -1,5 +1,4 @@
 name: Maven Release
-run-name: Release EFI Bausparservice API
 on:
   workflow_dispatch:
 
