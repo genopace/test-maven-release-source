@@ -1,0 +1,23 @@
+name: Create Tag
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: The tag to create
+        type: string
+        required: true
+
+jobs:
+  git-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: create tag
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git tag ${{ inputs.tag }}
+          git push --tags
+        env:
+          GITHUB_PAT: ${{ secrets.NOTIFY_REPOS_PAT }}
+
