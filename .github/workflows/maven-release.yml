@@ -16,24 +16,19 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
           cache: 'maven'
-      - name: Set up Git
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-      - name: Perpare Maven Release
-        run: |
-          mvn --batch-mode -s github-maven-settings.xml release:prepare
-        env:
-          GITHUB_PAT: ${{ secrets.NOTIFY_REPOS_PAT }}
       - name: Get release version
         id: get-release-version
         run: |
           ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)
           ARTIFACT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-          echo "RELEASE_VERSION=${ARTIFACT_ID}-${ARTIFACT_VERSION}" >> "$GITHUB_OUTPUT"
-      - name: Perform Maven Release
+          echo "RELEASE_VERSION=${ARTIFACT_ID}-${ARTIFACT_VERSION%-SNAPSHOT}" >> "$GITHUB_OUTPUT"
+      - name: Set up Git
         run: |
-          mvn --batch-mode -s github-maven-settings.xml release:perform
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+      - name: Create Maven Release
+        run: |
+          mvn --batch-mode -s github-maven-settings.xml release:prepare release:perform
         env:
           GITHUB_PAT: ${{ secrets.NOTIFY_REPOS_PAT }}
   github-release:
