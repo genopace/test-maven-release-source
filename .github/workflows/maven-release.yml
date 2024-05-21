@@ -4,7 +4,7 @@ on:
 
 jobs:
   maven-release:
-    name: GitHub Release
+    name: Maven Release
     runs-on: ubuntu-latest
     outputs:
       release-version: ${{ steps.get-release-version.outputs.RELEASE_VERSION }}
