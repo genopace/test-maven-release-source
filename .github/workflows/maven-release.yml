@@ -6,6 +6,8 @@ jobs:
   maven-release:
     name: GitHub Release
     runs-on: ubuntu-latest
+    outputs:
+      release-version: ${{ steps.get-release-version.outputs.RELEASE_VERSION }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK
@@ -14,11 +16,39 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
           cache: 'maven'
-      - name: Perform Maven Release
+      - name: Set up Git
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          mvn --batch-mode -s github-maven-settings.xml release:prepare release:perform
+      - name: Perpare Maven Release
+        run: |
+          mvn --batch-mode -s github-maven-settings.xml release:prepare
         env:
           GITHUB_PAT: ${{ secrets.NOTIFY_REPOS_PAT }}
+      - name: Get release version
+        id: get-release-version
+        run: |
+          ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout
+          ARTIFACT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout
+          echo "RELEASE_VERSION=${ARTIFACT_ID}-${ARTIFACT_VERSION}" >> "$GITHUB_OUTPUT"
+      - name: Perform Maven Release
+        run: |
+          mvn --batch-mode -s github-maven-settings.xml release:perform
+        env:
+          GITHUB_PAT: ${{ secrets.NOTIFY_REPOS_PAT }}
+  github-release:
+    name: GitHub Release
+    needs: maven-release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .
+      - name: Create a GitHub release
+        run: gh release create ${{ needs.maven-release.outputs.release-version }} --verify-tag --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}
 

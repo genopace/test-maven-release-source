@@ -1,9 +1,8 @@
 name: Notify other repos
 on:
-  push:
-    tags:
-      - g*
-
+  release:
+    types:
+      - released
 permissions:
   contents: read
 
