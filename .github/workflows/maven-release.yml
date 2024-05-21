@@ -45,5 +45,5 @@ jobs:
       - name: Create a GitHub release
         run: gh release create ${{ needs.maven-release.outputs.release-version }} --verify-tag --generate-notes
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.NOTIFY_REPOS_PAT }}
 
