@@ -19,5 +19,5 @@ jobs:
           git tag ${{ inputs.tag }}
           git push --tags
         env:
-          GITHUB_TOKEN: ${{ secrets.NOTIFY_REPOS_PAT }}
+          GITHUB_TOKEN: INVALID
 
