@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        repo: [ 'genopace/test-maven-release-dependant-1', 'genopace/test-maven-release-dependant-2' ]
+        repo: [ 'genopace/test-maven-release-dependant-1' ]
     steps:
       - name: Get version from tag
         run: |
