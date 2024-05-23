@@ -11,6 +11,6 @@ jobs:
   on-tag:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Received tag event for ${{ git.ref_name }}!"
+      - run: echo "Received tag event for ${{ github.ref_name }}!"
 
 
