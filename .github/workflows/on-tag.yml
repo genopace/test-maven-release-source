@@ -1,0 +1,16 @@
+name: On Tag
+on:
+  push:
+    tags:
+      - genopace-test-artefact-*
+
+permissions:
+  contents: read
+
+jobs:
+  on-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Received tag event for ${{ git.ref_name }}!"
+
+
